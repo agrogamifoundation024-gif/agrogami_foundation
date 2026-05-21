@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agrogami Foundation</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4fff7;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      background:#0b6b3d;
+      padding:14px 0;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand{
+      color:#fff !important;
+      font-size:28px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .navbar-brand img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .nav-link{
+      color:#fff !important;
+      margin-left:15px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-link:hover{
+      color:#c8ffe0 !important;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('https://i.postimg.cc/R0YzqmhH/IMG-20260321-100646798-HDR.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+      color:#fff;
+
+      padding:120px 20px;
+    }
+
+    .hero img{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #fff;
+      margin-bottom:25px;
+      animation:pulse 2s infinite;
+    }
+
+    .hero h1{
+      font-size:65px;
+      font-weight:700;
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:auto;
+      margin-top:20px;
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:35px;
+      background:#12b56e;
+      color:#fff;
+      text-decoration:none;
+      padding:14px 35px;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .hero-btn:hover{
+      background:#fff;
+      color:#0b6b3d;
+      transform:translateY(-5px);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      color:#0b6b3d;
+      font-size:45px;
+      font-weight:700;
+    }
+
+    .section-title p{
+      color:#666;
+      margin-top:10px;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      background:#fff;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* TEAM */
+
+    .team-card{
+      background:#fff;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.4s;
+      height:100%;
+    }
+
+    .team-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .team-img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .team-content{
+      padding:25px;
+      text-align:center;
+    }
+
+    .team-content h4{
+      color:#0b6b3d;
+      font-weight:700;
+      font-size:24px;
+    }
+
+    .team-content h6{
+      color:#12b56e;
+      margin:10px 0;
+      font-weight:600;
+    }
+
+    .team-content p{
+      color:#666;
+      font-size:14px;
+    }
+
+    /* REGISTRATION */
+
+    .registration-box{
+      background:#fff;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .watermark{
+      position:absolute;
+      width:350px;
+      opacity:0.05;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      z-index:0;
+    }
+
+    form{
+      position:relative;
+      z-index:2;
+    }
+
+    label{
+      font-weight:600;
+      margin-bottom:6px;
+    }
+
+    input,
+    select,
+    textarea{
+      border-radius:12px !important;
+      padding:12px !important;
+    }
+
+    .section-small-title{
+      font-size:22px;
+      font-weight:700;
+      color:#0b6b3d;
+      margin-top:20px;
+      margin-bottom:20px;
+      border-bottom:2px solid #12b56e;
+      padding-bottom:8px;
+    }
+
+    .submit-btn{
+      background:#12b56e;
+      border:none;
+      color:#fff;
+      padding:14px 40px;
+      border-radius:50px;
+      font-size:18px;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .submit-btn:hover{
+      background:#0b6b3d;
+    }
+
+    /* CONTACT */
+
+    .social a{
+      width:50px;
+      height:50px;
+      background:#12b56e;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      color:#fff;
+      margin:6px;
+      font-size:20px;
+      transition:0.4s;
+      text-decoration:none;
+    }
+
+    .social a:hover{
+      background:#0b6b3d;
+      transform:translateY(-5px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#06351f;
+      color:#fff;
+      text-align:center;
+      padding:60px 0 20px;
+    }
+
+    .footer-logo{
+      width:100px;
+      border-radius:50%;
+      margin-bottom:20px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp-btn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      color:#fff;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:30px;
+      z-index:999;
+      text-decoration:none;
+      animation:pulse 2s infinite;
+    }
+
+    /* ANIMATION */
+
+    @keyframes pulse{
+
+      0%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.1);
+      }
+
+      100%{
+        transform:scale(1);
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .team-img{
+        height:280px;
+      }
+
+      .section-title h2{
+        font-size:34px;
+      }
+
+      .registration-box{
+        padding:25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      <img src="https://i.postimg.cc/LsQLvLzk/file.jpg">
+      Agrogami Foundation
+    </a>
+
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#team">Team</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#registration">Registration</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div>
+
+    <img src="https://i.postimg.cc/LsQLvLzk/file.jpg">
+
+    <h1>Agrogami Foundation</h1>
+
+    <p>
+      মানবতার সেবায় নিয়োজিত একটি সামাজিক সংগঠন।
+      শিক্ষা, রক্তদান, অসহায় মানুষের পাশে দাঁড়ানো
+      এবং সমাজ উন্নয়নে আমরা কাজ করে যাচ্ছি।
+    </p>
+
+    <a href="#registration" class="hero-btn">
+      Registration Now
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>About Foundation</h2>
+
+      <p>আমাদের সম্পর্কে</p>
+
+    </div>
+
+    <div class="about-box">
+
+      <div class="row align-items-center">
+
+        <div class="col-lg-6 mb-4">
+
+          <img
+          src="https://i.postimg.cc/R0YzqmhH/IMG-20260321-100646798-HDR.jpg"
+          class="img-fluid rounded-4">
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <h3 class="fw-bold text-success mb-4">
+            Welcome To Agrogami Foundation
+          </h3>
+
+          <p>
+            Agrogami Foundation is a volunteer based social organization.
+            We work for poor and helpless people through education,
+            relief support, blood donation and humanitarian activities.
+          </p>
+
+          <p>
+            আমাদের মূল লক্ষ্য হলো তরুণদের মানবিক কাজে উদ্বুদ্ধ করা
+            এবং সমাজের পিছিয়ে থাকা মানুষের পাশে দাঁড়ানো।
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team" style="background:#effff5;">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Our Team</h2>
+
+      <p>অগ্রগামী ফাউন্ডেশনের সদস্যবৃন্দ</p>
+
+    </div>
+
+    <div class="row g-4">
+
+      <!-- 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/vBZ9GpDw/joy-vai.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Naimul Hasan Joy</h4>
+            <h6>Founder / প্রতিষ্ঠাতা</h6>
+            <p>Leading the organization with vision and humanity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/P5LdnKd6/sujon-vai-(1).jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Khaled Masud Sujon</h4>
+            <h6>Co-Founder / সহ-প্রতিষ্ঠাতা</h6>
+            <p>Helping organizational growth and social activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/3xjnNQ86/Whats-App-Image-2026-05-20-at-9-25-01-PM.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Humayun Kabir</h4>
+            <h6>Chairman / চেয়ারম্যান</h6>
+            <p>Providing leadership and organizational guidance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/76qHNfKK/4f6ddb83-5287-4770-a528-d5e04952edb7.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Murad Hasan Moon</h4>
+            <h6>President / সভাপতি</h6>
+            <p>Leading volunteer and humanitarian activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/nr5qR0Hd/forhad.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Forhad Hasan</h4>
+            <h6>General Secretary / সাধারণ সম্পাদক</h6>
+            <p>Managing communications and organization activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/bN0qydnN/Whats-App-Image-2026-05-20-at-9-32-14-PM.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Nahid Hasan Jiyem</h4>
+            <h6>Joint Secretary</h6>
+            <p>Helping volunteer and management activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/qgVxBj97/image-1778931013101.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Muntasir Lais</h4>
+            <h6>Treasurer & Manager</h6>
+            <p>Managing finance and organization support activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/SNJr6zS4/aktarul.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Aktarul Islam</h4>
+            <h6>Chief Volunteer</h6>
+            <p>Leading volunteer teams and social campaigns.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/L4V7CfFm/Whats-App-Image-2026-05-20-at-9-02-15-PM.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Robiul Alom</h4>
+            <h6>Senior Volunteer</h6>
+            <p>Supporting relief operations and volunteer programs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/FHKVrd6T/saddam.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Saddam Ali</h4>
+            <h6>Volunteer Field</h6>
+            <p>Working actively in field and event activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://i.postimg.cc/Y9QcqyPj/Whats-App-Image-2026-05-20-at-9-00-51-PM.jpg" class="team-img">
+          <div class="team-content">
+            <h4>Md. Mahamud Hasan</h4>
+            <h6>Event Manager</h6>
+            <p>Managing foundation events and social campaigns.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REGISTRATION -->
+
+<section id="registration">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Registration Form</h2>
+
+      <p>অগ্রগামী ফাউন্ডেশনে রেজিস্ট্রেশন করুন</p>
+
+    </div>
+
+    <div class="registration-box">
+
+      <img src="https://i.postimg.cc/LsQLvLzk/file.jpg" class="watermark">
+
+      <form action="https://formspree.io/f/xykvernw" method="POST">
+
+        <input type="hidden" name="_subject" value="নতুন অগ্রগামী ফাউন্ডেশন রেজিস্ট্রেশন">
+
+        <!-- PERSONAL -->
+
+        <div class="section-small-title">
+          ব্যক্তিগত তথ্য
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+            <label>পূর্ণ নাম (বাংলা)</label>
+            <input type="text" name="full_name_bn" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>Full Name (English)</label>
+            <input type="text" name="full_name_en" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>পিতার নাম (বাংলা)</label>
+            <input type="text" name="father_name_bn" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>Father's Name (English)</label>
+            <input type="text" name="father_name_en" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>মাতার নাম (বাংলা)</label>
+            <input type="text" name="mother_name_bn" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>Mother's Name (English)</label>
+            <input type="text" name="mother_name_en" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>জাতীয় পরিচয়পত্র নম্বর</label>
+            <input type="text" name="nid_number" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>জন্ম নিবন্ধন নম্বর</label>
+            <input type="text" name="birth_registration" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label>লিঙ্গ</label>
+
+            <select name="gender" class="form-select">
+
+              <option>নির্বাচন করুন</option>
+              <option>পুরুষ</option>
+              <option>মহিলা</option>
+              <option>অন্যান্য</option>
+
+            </select>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>জন্ম তারিখ</label>
+            <input type="date" name="birth_date" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label>রক্তের গ্রুপ</label>
+
+            <select name="blood_group" class="form-select">
+
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+
+            </select>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label>ধর্ম</label>
+
+            <select name="religion" class="form-select">
+
+              <option>ইসলাম</option>
+              <option>হিন্দু</option>
+              <option>বৌদ্ধ</option>
+              <option>খ্রিস্টান</option>
+              <option>অন্যান্য</option>
+
+            </select>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>জাতীয়তা</label>
+            <input type="text" name="nationality" value="বাংলাদেশী" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label>মোবাইল নম্বর</label>
+            <input type="text" name="mobile_number" class="form-control" required>
+          </div>
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <div class="section-small-title">
+          ঠিকানার তথ্য
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <h5 class="mb-3 text-success fw-bold">
+              স্থায়ী ঠিকানা
+            </h5>
+
+            <div class="mb-3">
+              <label>বিভাগ</label>
+
+              <select name="permanent_division" class="form-select">
+
+                <option>রংপুর</option>
+                <option>ঢাকা</option>
+                <option>চট্টগ্রাম</option>
+                <option>রাজশাহী</option>
+                <option>খুলনা</option>
+                <option>বরিশাল</option>
+                <option>সিলেট</option>
+                <option>ময়মনসিংহ</option>
+
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label>জেলা</label>
+              <input type="text" name="permanent_district" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>উপজেলা</label>
+              <input type="text" name="permanent_upazila" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>গ্রাম / মহল্লা</label>
+              <input type="text" name="permanent_village" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>পোস্ট অফিস</label>
+              <input type="text" name="permanent_post_office" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>পোস্ট কোড</label>
+              <input type="text" name="permanent_post_code" class="form-control">
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <h5 class="mb-3 text-success fw-bold">
+              বর্তমান ঠিকানা
+            </h5>
+
+            <div class="mb-3">
+              <label>বিভাগ</label>
+
+              <select name="present_division" class="form-select">
+
+                <option>রংপুর</option>
+                <option>ঢাকা</option>
+                <option>চট্টগ্রাম</option>
+                <option>রাজশাহী</option>
+                <option>খুলনা</option>
+                <option>বরিশাল</option>
+                <option>সিলেট</option>
+                <option>ময়মনসিংহ</option>
+
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label>জেলা</label>
+              <input type="text" name="present_district" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>উপজেলা</label>
+              <input type="text" name="present_upazila" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>গ্রাম / মহল্লা</label>
+              <input type="text" name="present_village" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>পোস্ট অফিস</label>
+              <input type="text" name="present_post_office" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label>পোস্ট কোড</label>
+              <input type="text" name="present_post_code" class="form-control">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <div class="text-center mt-4">
+
+          <button type="submit" class="submit-btn">
+            সাবমিট করুন
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" style="background:#effff5;">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Contact Us</h2>
+
+      <p>যোগাযোগ করুন</p>
+
+    </div>
+
+    <div class="about-box text-center">
+
+      <img
+      src="https://i.postimg.cc/LsQLvLzk/file.jpg"
+      width="100"
+      class="rounded-circle mb-4">
+
+      <h3 class="fw-bold text-success">
+        Agrogami Foundation
+      </h3>
+
+      <p class="mt-3">
+        <i class="fa-solid fa-phone"></i>
+        01735675839
+      </p>
+
+      <div class="social mt-4">
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/share/1DnA88wfg1/" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- YOUTUBE -->
+        <a href="https://youtube.com/@agrogamifoundation?si=D-01YyA5_uuhZrUm" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/agrogami_foundation?igsh=amRzbmNtMzdsNG05" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/8801735675839" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <img
+    src="https://i.postimg.cc/LsQLvLzk/file.jpg"
+    class="footer-logo">
+
+    <h3>Agrogami Foundation</h3>
+
+    <p class="mt-3">
+      © 2026 Agrogami Foundation | All Rights Reserved
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/8801735675839"
+target="_blank"
+class="whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- BOOTSTRAP JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
